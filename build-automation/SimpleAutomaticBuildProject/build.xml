@@ -34,11 +34,17 @@
   </target>
   
   <target name="install" depends="jar">
-  	
-    
-    <copy todir="dist" >
+  	<copy todir="dist" >
       <fileset dir="lib"/>
     </copy>
+  </target>
+  
+  <target name="run" depends="install">
+  	<java jar="dist/SimpleAutomaticBuildProject.jar" fork="true">
+      <arg line="Daniel"/>
+    </java>
+    <antcall target="clean"/>
+    
   </target>
   
 </project>
