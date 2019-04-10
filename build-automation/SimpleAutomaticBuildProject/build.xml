@@ -31,4 +31,12 @@
     </jar>
   </target>
   
+  <target name="install" depends="jar">
+  	
+    
+    <copy todir="dist" >
+      <fileset dir="lib"/>
+    </copy>
+  </target>
+  
 </project>
