@@ -4,6 +4,8 @@
   <!-- read more about: https://ant.apache.org/manual/targets.html -->
   <target name="init">
     <mkdir dir="build-ant"/>
+    <mkdir dir="lib"/>
+    <mkdir dir="dist"/>
   </target>  
   
   <!-- removes same directories which created by init target -->
@@ -18,6 +20,15 @@
 	<!-- read more about ant tasks in general: https://ant.apache.org/manual/tasksoverview.html -->
 	<!-- read more about delete task in detail: https://ant.apache.org/manual/Tasks/delete.html -->
   	<javac srcdir="src" destdir="build-ant" includeantruntime="false"/>
+  </target>
+  
+  <!-- creates executeable jar file -->
+  <target name="jar" depends="compile">
+  	<jar destfile="lib/SimpleAutomaticBuildProject.jar" basedir="build-ant">
+      <manifest>
+        <attribute name="Main-Class" value="at.fhj.iit.Main"/>
+      </manifest>
+    </jar>
   </target>
   
 </project>
