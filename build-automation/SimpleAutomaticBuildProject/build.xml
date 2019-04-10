@@ -6,5 +6,13 @@
     <mkdir dir="build-ant"/>
   </target>  
   
+  <!-- removes same directories which created by init target -->
+  <target name="clean">
+	<!-- read more about ant tasks in general: https://ant.apache.org/manual/tasksoverview.html -->
+	<!-- read more about delete task in detail: https://ant.apache.org/manual/Tasks/delete.html -->
+  	<delete dir="build-ant"/>
+  </target>
+  
+  
   
 </project>
