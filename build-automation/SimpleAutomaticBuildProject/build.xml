@@ -13,6 +13,8 @@
 	<!-- read more about ant tasks in general: https://ant.apache.org/manual/tasksoverview.html -->
 	<!-- read more about delete task in detail: https://ant.apache.org/manual/Tasks/delete.html -->
   	<delete dir="build-ant"/>
+    <delete dir="lib"/>
+    <delete dir="dist"/>
   </target>
   
   <!-- compiles defined java src files and store them into destination directory -->
