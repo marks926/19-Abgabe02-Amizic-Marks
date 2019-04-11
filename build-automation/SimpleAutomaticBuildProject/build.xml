@@ -1,5 +1,5 @@
 <project name="SimpleAutomaticBuildProject">
-
+  <property file = "build.properties"/>
   <!-- first target which creates directories for later usage -->
   <!-- read more about: https://ant.apache.org/manual/targets.html -->
   <target name="init">
@@ -28,7 +28,7 @@
   <target name="jar" depends="compile">
   	<jar destfile="lib/SimpleAutomaticBuildProject.jar" basedir="build-ant">
       <manifest>
-        <attribute name="Main-Class" value="at.fhj.iit.Main"/>
+        <attribute name="Main-Class" value="${path}"/>
       </manifest>
     </jar>
   </target>
@@ -41,7 +41,7 @@
   
   <target name="run" depends="install">
   	<java jar="dist/SimpleAutomaticBuildProject.jar" fork="true">
-      <arg line="Daniel"/>
+      <arg value="${name}" />
     </java>
     <antcall target="clean"/>
     
